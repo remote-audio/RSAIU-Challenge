@@ -1,5 +1,12 @@
 # Organizer portraits
 
-Add official headshots here with the filenames referenced in `index.html`, for example `fan-liu.jpg` and `yan-zhao.jpg`.
+The official headshots currently used by the page are stored here. Keep these filenames when replacing a portrait so the paths in `index.html` continue to work:
 
-Until a picture is added, the website shows a clean placeholder with the exact expected relative path.
+- `liufan.jpg`
+- `zhaoyan.jpg`
+- `zongyuan.jpg`
+- `zhoujun.png`
+- `songyongze.png`
+- `lianzheng.png`
+- `yaoliang.jpg`
+- `zhoujunjie.png`
