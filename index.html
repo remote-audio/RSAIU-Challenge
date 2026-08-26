@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Remote Sensing Audio-Image Understanding Challenge at ICASSP 2027.">
+  <title>RemoteAIUC 2027 | ICASSP Grand Challenge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#top"><span class="brand-mark">R</span><span>RemoteAIUC <em>2027</em></span></a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <div class="nav-links">
+        <a href="#about">About</a><a href="#tracks">Tracks</a><a href="#dataset">Dataset</a><a href="#schedule">Schedule</a><a href="#people">People</a>
+        <a class="nav-cta" href="#resources">Participate <span>↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-grid"></div>
+      <div class="container hero-content">
+        <p class="eyebrow"><span class="live-dot"></span> ICASSP 2027 · GRAND CHALLENGE</p>
+        <h1>Remote Sensing<br><span>Audio–Image</span><br>Understanding</h1>
+        <p class="hero-lede">Teach machines to understand what people say about the Earth. Build the next generation of natural, speech-driven geospatial AI.</p>
+        <div class="hero-actions"><a class="button primary" href="#tracks">Explore the challenge <span>↓</span></a><a class="button ghost" href="#resources">Get the data <span>↗</span></a></div>
+        <div class="hero-meta"><div><strong>2</strong><small>Challenge tracks</small></div><div><strong>25K+</strong><small>Audio–image samples</small></div><div><strong>2027</strong><small>ICASSP conference</small></div></div>
+      </div>
+      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+      <div class="hero-stamp"><span>ICASSP</span><strong>2027</strong><small>Grand Challenge</small></div>
+    </section>
+
+    <section class="intro section" id="about"><div class="container two-col"><div><p class="kicker">01 / THE CHALLENGE</p><h2>Talk to the<br><i>Earth.</i></h2></div><div class="intro-copy"><p class="lead">Spoken audio is fast, expressive and natural. In time-critical remote-sensing scenarios, it lets users describe geographic targets without typing detailed queries.</p><p>RemoteAIUC is the first benchmark dedicated to audio-guided remote-sensing understanding. We invite the multimedia community to explore direct alignment between speech and Earth-observation imagery, preserving the emphasis and prosody that text leaves behind.</p><p class="note">Organized for <b>ICASSP 2027</b> · Remote sensing · Speech · Multimodal learning</p></div></div></section>
+
+    <section class="tracks section dark" id="tracks"><div class="container"><div class="section-head"><div><p class="kicker light">02 / TWO WAYS IN</p><h2>Choose your<br><i>frontier.</i></h2></div><p>Two complementary tasks. One shared goal: robust audio–visual grounding for Earth observation.</p></div><div class="track-grid">
+      <article class="track-card cyan"><div class="track-number">TRACK 01</div><h3>Remote-ARS</h3><h4>Audio Referring<br>Segmentation</h4><p>Given a remote-sensing image and an audio referring expression, predict a pixel-level mask for the object or region being described.</p><div class="tag-row"><span>Pixel-level</span><span>Audio grounding</span></div></article>
+      <article class="track-card orange"><div class="track-number">TRACK 02</div><h3>Remote-AIR</h3><h4>Audio–Image<br>Retrieval</h4><p>Given an audio query or an RS image, retrieve its most semantically relevant counterpart from the opposite modality.</p><div class="tag-row"><span>Bidirectional</span><span>Cross-modal</span></div></article>
+    </div></div></section>
+
+    <section class="dataset section" id="dataset"><div class="container"><div class="section-head"><div><p class="kicker">03 / THE DATA</p><h2>Built for<br><i>real conditions.</i></h2></div><p>Large-scale audio–image pairs, diverse voices and noise conditions, plus human-recorded queries for a meaningful test of generalization.</p></div><div class="stats-grid"><div class="stat"><strong>9,459</strong><span>Remote-ARS train triplets</span></div><div class="stat"><strong>21,612</strong><span>Remote-AIR train pairs</span></div><div class="stat"><strong>500</strong><span>Human-recorded test queries</span></div><div class="stat"><strong>2.87s</strong><span>Average ARS audio duration</span></div></div><div class="dataset-detail"><div><h3>Remote-ARS</h3><p>Constructed from RemoteSAM270K. Each sample contains an RS image, an audio expression and its segmentation mask. The dataset covers one-to-zero, one-to-one and one-to-many relationships.</p><table><thead><tr><th></th><th>Train</th><th>Val</th><th>Test</th></tr></thead><tbody><tr><td>Triplets</td><td>9,459</td><td>1,576</td><td>2,077</td></tr><tr><td>Avg. duration</td><td>2.87s</td><td>2.81s</td><td>—</td></tr></tbody></table></div><div><h3>Remote-AIR</h3><p>A curated set of one-to-one audio–image pairs for bidirectional retrieval. Audio is generated with diverse speaker designs and environmental noise, with human speech in the test set.</p><table><thead><tr><th></th><th>Train</th><th>Val</th><th>Test</th></tr></thead><tbody><tr><td>Pairs</td><td>21,612</td><td>3,602</td><td>4,105</td></tr><tr><td>Avg. duration</td><td>2.85s</td><td>2.76s</td><td>—</td></tr></tbody></table></div></div></div></section>
+
+    <section class="metrics section pale"><div class="container two-col"><div><p class="kicker">04 / HOW YOU WIN</p><h2>Clear metrics.<br><i>Fair ranking.</i></h2></div><div class="metric-list"><div class="metric"><span class="metric-icon">01</span><div><h3>Remote-ARS</h3><p><b>mIoU</b> is the primary ranking metric. Overall IoU (oIoU) is reported as a secondary metric.</p></div></div><div class="metric"><span class="metric-icon">02</span><div><h3>Remote-AIR</h3><p>Bidirectional R@1, R@5 and R@10. The mean R@1 across both directions is primary.</p></div></div><div class="metric"><span class="metric-icon">03</span><div><h3>Hidden-label evaluation</h3><p>CodaLab handles submission, private test labels and the public leaderboard.</p></div></div></div></div></section>
+
+    <section class="schedule section" id="schedule"><div class="container"><div class="section-head"><div><p class="kicker">05 / MARK YOUR CALENDAR</p><h2>Road to<br><i>ICASSP 2027.</i></h2></div><p>Dates are based on the current challenge proposal. Watch this page for updates.</p></div><div class="timeline"><div class="timeline-item active"><time>01 SEP 2026</time><div><h3>Data, baseline paper &amp; code available</h3><p>Training and validation data, baseline code and checkpoints released on Hugging Face.</p></div></div><div class="timeline-item"><time>10 NOV 2026</time><div><h3>Results submission opens</h3><p>CodaLab evaluation server opens for participant submissions.</p></div></div><div class="timeline-item"><time>24 NOV 2026</time><div><h3>Results submission deadline</h3></div></div><div class="timeline-item"><time>07 JAN 2027</time><div><h3>Paper submission deadline</h3></div></div><div class="timeline-item"><time>21 JAN 2027</time><div><h3>Paper acceptance notification</h3></div></div><div class="timeline-item"><time>28 JAN 2027</time><div><h3>Camera-ready deadline</h3></div></div></div></div></section>
+
+    <section class="resources section dark" id="resources"><div class="container"><p class="kicker light">06 / START HERE</p><h2>Make your<br><i>first submission.</i></h2><div class="resource-grid"><a class="resource" href="https://huggingface.co/datasets/RSAIUChallenge/RSAIU2027" target="_blank" rel="noreferrer"><span>↘</span><div><b>Dataset</b><small>Hugging Face · CC BY-NC 4.0</small></div><strong>↗</strong></a><a class="resource" href="#" aria-label="CodaLab competition page coming soon"><span>◎</span><div><b>Leaderboard</b><small>CodaLab · coming September 2026</small></div><strong>↗</strong></a><a class="resource" href="mailto:remoteaiuc2027@example.com"><span>✉</span><div><b>Contact the chairs</b><small>Ask a question about participation</small></div><strong>↗</strong></a></div></div></section>
+
+    <section class="people section" id="people"><div class="container"><div class="section-head"><div><p class="kicker">07 / THE TEAM</p><h2>Meet the<br><i>organizers.</i></h2></div><p>Researchers in computer vision, remote sensing, speech and affective computing joining forces.</p></div><div class="people-grid"><div class="person"><span class="person-index">01</span><h3>Fan Liu</h3><p>General Chair · Hohai University</p></div><div class="person"><span class="person-index">02</span><h3>Yan Zhao</h3><p>General Chair · Hohai University</p></div><div class="person"><span class="person-index">03</span><h3>Yuan Zong</h3><p>General Chair · Southeast University</p></div><div class="person"><span class="person-index">04</span><h3>Jun Zhou</h3><p>General Chair · Griffith University</p></div><div class="person"><span class="person-index">05</span><h3>Yongze Song</h3><p>General Chair · Curtin University</p></div><div class="person"><span class="person-index">06</span><h3>Zheng Lian</h3><p>Data Chair · Tongji University</p></div><div class="person"><span class="person-index">07</span><h3>Liang Yao</h3><p>Data Chair · Hohai University</p></div><div class="person"><span class="person-index">08</span><h3>Junjie Zhou</h3><p>Data Chair · Hohai University</p></div></div></div></section>
+  </main>
+  <footer class="footer"><div class="container"><a class="brand" href="#top"><span class="brand-mark">R</span><span>RemoteAIUC <em>2027</em></span></a><p>Remote Sensing Audio-Image Understanding Challenge · ICASSP 2027</p><a href="#top" class="back-top">Back to top ↑</a></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
