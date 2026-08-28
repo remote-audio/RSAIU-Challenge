@@ -4,6 +4,11 @@ const menu = document.querySelector('.menu-toggle');
 const links = document.querySelector('.nav-links');
 const revealItems = document.querySelectorAll('.reveal');
 
+const challengeTitle = document.querySelector('#tracks h2');
+if (challengeTitle) {
+  challengeTitle.innerHTML = 'Two tracks, <em>connecting speech and Earth observation.</em>';
+}
+
 function onScroll() {
   const y = window.scrollY;
   header.classList.toggle('scrolled', y > 40);
