@@ -6,7 +6,7 @@ const revealItems = document.querySelectorAll('.reveal');
 
 const challengeTitle = document.querySelector('#tracks h2');
 if (challengeTitle) {
-  challengeTitle.innerHTML = 'Two tracks, <em>connecting speech and Earth observation.</em>';
+  challengeTitle.innerHTML = 'Two tracks<br><em>connecting speech and Earth observation.</em>';
 }
 
 function onScroll() {
